@@ -1,8 +1,8 @@
-# VTT-to-SRT-Converter
+# WebVTT to SubRip Converter
 Convert .vtt subtitle files to .srt.
 
-Download binary: https://drive.google.com/file/d/0B7pnI6IXRy5MYWNDdlo0OE55S1U/view
+Download [latest release](https://github.com/AhmedOS/VTT-to-SRT-Converter/releases/latest).
 
-Requires .NET framework 4.5.2
+Requires .NET framework v4.0 or above.
 
 ![](https://i.imgur.com/hpmBDGF.png)
