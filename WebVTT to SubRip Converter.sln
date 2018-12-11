@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebVTT to SubRip Converter", "WebVTT-to-SubRip-Converter\WebVTT to SubRip Converter.csproj", "{9DC26F66-A010-412B-B426-C9785026452A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DC26F66-A010-412B-B426-C9785026452A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC26F66-A010-412B-B426-C9785026452A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC26F66-A010-412B-B426-C9785026452A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC26F66-A010-412B-B426-C9785026452A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94F7F61F-A26E-41A9-9185-DBEF40A8EADD}
+	EndGlobalSection
+EndGlobal
