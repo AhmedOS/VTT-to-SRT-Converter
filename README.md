@@ -6,3 +6,6 @@ Convert .vtt subtitle files to .srt.
 Requires .NET framework v4.0 or above.
 
 ![](https://i.imgur.com/hpmBDGF.png)
+
+### TODO:
+- CSS handling.
