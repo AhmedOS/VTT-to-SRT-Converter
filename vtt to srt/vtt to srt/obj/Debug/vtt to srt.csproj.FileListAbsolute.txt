@@ -1,9 +1,0 @@
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\bin\Debug\vtt to srt.exe.config
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\bin\Debug\vtt to srt.exe
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\bin\Debug\vtt to srt.pdb
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\obj\Debug\vtt to srt.csprojResolveAssemblyReference.cache
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\obj\Debug\vtt_to_srt.Form1.resources
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\obj\Debug\vtt_to_srt.Properties.Resources.resources
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\obj\Debug\vtt to srt.csproj.GenerateResource.Cache
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\obj\Debug\vtt to srt.exe
-c:\users\ahmed osama\documents\visual studio 2015\Projects\vtt to srt\vtt to srt\obj\Debug\vtt to srt.pdb
