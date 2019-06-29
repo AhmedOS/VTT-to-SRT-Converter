@@ -37,6 +37,7 @@
             this.outputFolderLabel = new System.Windows.Forms.Label();
             this.outputFolderTextBox = new System.Windows.Forms.TextBox();
             this.websiteLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // filesListBox
@@ -105,7 +106,7 @@
             this.outputFolderLabel.AutoSize = true;
             this.outputFolderLabel.Location = new System.Drawing.Point(12, 235);
             this.outputFolderLabel.Name = "outputFolderLabel";
-            this.outputFolderLabel.Size = new System.Drawing.Size(76, 13);
+            this.outputFolderLabel.Size = new System.Drawing.Size(71, 13);
             this.outputFolderLabel.TabIndex = 6;
             this.outputFolderLabel.Text = "Output folder:";
             // 
@@ -121,15 +122,27 @@
             this.websiteLabel.AutoSize = true;
             this.websiteLabel.Location = new System.Drawing.Point(2, 285);
             this.websiteLabel.Name = "websiteLabel";
-            this.websiteLabel.Size = new System.Drawing.Size(91, 13);
+            this.websiteLabel.Size = new System.Drawing.Size(90, 13);
             this.websiteLabel.TabIndex = 8;
             this.websiteLabel.Text = "AhmedOsama.me";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(255, 141);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 41);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Convert Folder";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 301);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.websiteLabel);
             this.Controls.Add(this.outputFolderTextBox);
             this.Controls.Add(this.outputFolderLabel);
@@ -160,6 +173,7 @@
         private System.Windows.Forms.Label outputFolderLabel;
         private System.Windows.Forms.TextBox outputFolderTextBox;
         private System.Windows.Forms.Label websiteLabel;
+        private System.Windows.Forms.Button button1;
     }
 }
 

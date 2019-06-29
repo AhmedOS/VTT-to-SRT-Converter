@@ -87,51 +87,56 @@ namespace vtt_to_srt
         {
             try
             {
-                using (StreamReader stream = new StreamReader(filePath))
-                {
-                    StringBuilder output = new StringBuilder();
-                    int lineNumber = 1;
-                    while (!stream.EndOfStream)
-                    {
-                        string line = stream.ReadLine();
-                        if (IsTimecode(line))
-                        {
-                            output.AppendLine(lineNumber.ToString());
-                            lineNumber++;
-                            line = line.Replace('.', ',');
-                            line = DeleteCueSettings(line);
-                            line = AddHour(line);
-                            output.AppendLine(line);
-                            bool foundCaption = false;
-                            while(true)
-                            {
-                                if (stream.EndOfStream)
-                                {
-                                    if (foundCaption)
-                                        break;
-                                    else
-                                        throw new Exception("Corrupted file: Found timecode without caption");
-                                }
-                                line = stream.ReadLine();
-                                if (String.IsNullOrEmpty(line) || String.IsNullOrWhiteSpace(line))
-                                {
-                                    output.AppendLine();
-                                    break;
-                                }
-                                foundCaption = true;
-                                output.AppendLine(line);
-                            }
-                        }
-                    }
-                    string fileName = Path.GetFileNameWithoutExtension(filePath) + ".srt";
-                    using (StreamWriter outputFile = new StreamWriter(outputFolderTextBox.Text + '\\' + fileName))
-                        outputFile.Write(output);
-                }
+                ConvertToSrt(filePath, outputFolderTextBox.Text);
             }
             catch (Exception e)
             {
                 MessageBox.Show(this, e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        void ConvertToSrt(string filePath, string outputPath)
+        {            
+            using (StreamReader stream = new StreamReader(filePath))
+            {
+                StringBuilder output = new StringBuilder();
+                int lineNumber = 1;
+                while (!stream.EndOfStream)
+                {
+                    string line = stream.ReadLine();
+                    if (IsTimecode(line))
+                    {
+                        output.AppendLine(lineNumber.ToString());
+                        lineNumber++;
+                        line = line.Replace('.', ',');
+                        line = DeleteCueSettings(line);
+                        line = AddHour(line);
+                        output.AppendLine(line);
+                        bool foundCaption = false;
+                        while(true)
+                        {
+                            if (stream.EndOfStream)
+                            {
+                                if (foundCaption)
+                                    break;
+                                else
+                                    throw new Exception("Corrupted file: Found timecode without caption");
+                            }
+                            line = stream.ReadLine();
+                            if (String.IsNullOrEmpty(line) || String.IsNullOrWhiteSpace(line))
+                            {
+                                output.AppendLine();
+                                break;
+                            }
+                            foundCaption = true;
+                            output.AppendLine(line);
+                        }
+                    }
+                }
+                string fileName = Path.GetFileNameWithoutExtension(filePath) + ".srt";
+                using (StreamWriter outputFile = new StreamWriter(outputPath + '\\' + fileName))
+                    outputFile.Write(output);
+            }            
         }
 
         bool IsTimecode(string line)
@@ -161,6 +166,28 @@ namespace vtt_to_srt
             return line;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+                {
+                    if (fbd.ShowDialog() == DialogResult.OK && !String.IsNullOrWhiteSpace(fbd.SelectedPath))
+                    {
+                        string[] fileArray = Directory.GetFiles(@fbd.SelectedPath, "*.vtt", SearchOption.AllDirectories);
+                        foreach(string vttFile in fileArray)
+                        {
+                            ConvertToSrt(vttFile, Path.GetDirectoryName(vttFile));
+                        }
+                    }
+                }
+                MessageBox.Show(this, "Convert Success, Enjoy your sub", "Convert Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }
