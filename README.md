@@ -1,9 +1,9 @@
 # WebVTT to SubRip Converter
 Convert WebVTT (.vtt) subtitle files to SubRip (.srt) format.
 
-![](https://i.imgur.com/hpmBDGF.png)
+![](https://i.imgur.com/8uofzPC.png)
 
-## ⬇️ [Download](https://github.com/AhmedOS/VTT-to-SRT-Converter/releases/download/v2.0/WebVTT.to.SubRip.Converter.exe) latest release.
+## ⬇️ [Download](https://github.com/antcom1988/VTT-to-SRT-Converter/releases/download/v3.0/WebVTT.to.SubRip.Converter.exe) latest release.
 Requires .NET framework v4.0 or above.
 
 ### TODO:
