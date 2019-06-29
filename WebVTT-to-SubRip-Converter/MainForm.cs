@@ -100,6 +100,7 @@ namespace vtt_to_srt
                             lineNumber++;
                             line = line.Replace('.', ',');
                             line = DeleteCueSettings(line);
+                            line = AddHour(line);
                             output.AppendLine(line);
                             bool foundCaption = false;
                             while(true)
@@ -151,6 +152,13 @@ namespace vtt_to_srt
                 output.Append(ch);
             }
             return output.ToString();
+        }
+
+        string AddHour(string line)
+        {
+            line = $"00:{line}";
+            line = line.Replace(" --> ", " --> 00:");
+            return line;
         }
 
     }
