@@ -97,9 +97,16 @@ namespace vtt_to_srt
                         if (IsTimecode(line))
                         {
                             output.AppendLine(lineNumber.ToString());
-                            lineNumber++;
+                            lineNumber++;                            
                             line = line.Replace('.', ',');
                             line = DeleteCueSettings(line);
+                            string timeSrt1 =line.Substring(0, line.IndexOf('-') );
+                            string timeSrt2 = line.Substring(line.IndexOf('>') + 1);
+                            DateTime timeAux1 = DateTime.ParseExact(timeSrt1.Trim(), "mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
+                            DateTime timeAux2 = DateTime.ParseExact(timeSrt2.Trim(), "mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
+                            line = timeAux1.ToString("HH:mm:ss,fff") + " --> "+ timeAux2.ToString("HH:mm:ss,fff");
+
+
                             output.AppendLine(line);
                             bool foundCaption = false;
                             while(true)
