@@ -19,7 +19,7 @@ namespace VttSrtConverter
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "WebVTT files (*.vtt)|*.vtt",
+                Filter = "WebVTT files (*.vtt)|*.vtt|All files (*.*)|*.*",
                 RestoreDirectory = true,
                 Multiselect = true
             };
