@@ -49,12 +49,16 @@ namespace VttSrtConverter
 
         private void BrowseButton_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog fbd = new FolderBrowserDialog())
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+
+            if (Directory.Exists(outputFolderTextBox.Text))
             {
-                if (fbd.ShowDialog() == DialogResult.OK && !String.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    outputFolderTextBox.Text = fbd.SelectedPath;
-                }
+                fbd.SelectedPath = outputFolderTextBox.Text;
+            }
+
+            if (fbd.ShowDialog() == DialogResult.OK && !String.IsNullOrWhiteSpace(fbd.SelectedPath))
+            {
+                outputFolderTextBox.Text = fbd.SelectedPath;
             }
         }
 
@@ -98,7 +102,6 @@ namespace VttSrtConverter
             browseButton.Enabled = !browseButton.Enabled;
             convertButton.Enabled = !convertButton.Enabled;
         }
-
     }
 
 }
