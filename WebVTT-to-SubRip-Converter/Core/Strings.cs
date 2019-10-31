@@ -12,5 +12,6 @@ namespace VttSrtConverter.Core
         public static string noOutputFolder = "Output folder doesn't exist.";
         public static string convertingFinished = "Converting is Finished.";
         public static string convertedSuccessfully = "Converted successfully.";
+        public static string unauthorizedAccess = "Folder not has a full authorized access";
     }
 }
