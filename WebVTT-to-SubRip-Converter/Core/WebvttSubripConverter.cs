@@ -11,6 +11,8 @@ namespace VttSrtConverter.Core
     {
 
         static string subripFileExtension = ".srt";
+        static string simpleTimeFormat = "mm:ss,fff";
+        static string extendedTimeFormat = "HH:mm:ss,fff";
 
         public void ConvertToSubrip(string inputFilePath, string outputFolderPath)
         {
@@ -46,9 +48,19 @@ namespace VttSrtConverter.Core
 
                     string timeSrt1 = line.Substring(0, line.IndexOf('-'));
                     string timeSrt2 = line.Substring(line.IndexOf('>') + 1);
-                    DateTime timeAux1 = DateTime.ParseExact(timeSrt1.Trim(), "mm:ss,fff", CultureInfo.InvariantCulture);
-                    DateTime timeAux2 = DateTime.ParseExact(timeSrt2.Trim(), "mm:ss,fff", CultureInfo.InvariantCulture);
-                    line = timeAux1.ToString("HH:mm:ss,fff") + " --> " + timeAux2.ToString("HH:mm:ss,fff");
+                    int divIt1 = timeSrt1.Count(x => x == ':');
+                    int divIt2 = timeSrt1.Count(x => x == ':');
+
+                    string timeFormat = simpleTimeFormat;
+                    if (divIt1 != divIt2)
+                        throw new Exception(Strings.invalidTimeFormat);
+
+                    if (divIt1 == 2 && divIt2 == 2)
+                        timeFormat = extendedTimeFormat;
+
+                    DateTime timeAux1 = DateTime.ParseExact(timeSrt1.Trim(), timeFormat, CultureInfo.InvariantCulture);
+                    DateTime timeAux2 = DateTime.ParseExact(timeSrt2.Trim(), timeFormat, CultureInfo.InvariantCulture);
+                    line = timeAux1.ToString(extendedTimeFormat) + " --> " + timeAux2.ToString(extendedTimeFormat);
 
                     output.AppendLine(line);
 
